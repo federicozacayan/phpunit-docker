@@ -1,0 +1,14 @@
+#!/bin/bash
+# .git/hooks/pre-commmit (With Execution Permission - Linux)
+M=$(sudo docker run -v "$PWD":/app --rm phpunit/phpunit --configuration="phpunit.xml" | grep -o fail | wc -l)
+if [ $M -eq "0" ] ; then
+	exit $M
+else
+	sudo docker run -v "$PWD":/app --rm phpunit/phpunit --configuration="phpunit.xml" 
+	echo ''
+	echo ''
+	echo 'Commit Fail!'
+	echo ''
+	echo ''
+fi
+exit $M
