@@ -16,7 +16,7 @@ We assume you are using Linux.
 Clone this repository.
 
 ```
-git clone https://github.com/federicozacayan/phpunit-docker .
+git clone https://github.com/federicozacayan/phpunit-docker.git .
 ```
 
 
