@@ -39,3 +39,19 @@ sudo docker run -v "$PWD":/app --rm phpunit/phpunit --configuration="phpunit.xml
 sudo docker run -v "$PWD":/app --rm phpunit/phpunit --configuration="phpunit.xml" --coverage-html coverage --whitelist app
 ```
 
+# Run Web Application
+
+```bash
+sudo docker build -t ap .
+```
+
+```bash
+sudo docker run -d -p 88:80 -v "$PWD":/var/www/html --name=mc ap
+```
+
+Then test the web application on 
+```
+http://localhost:88/
+```
+
+Follow the instructions in Dockerfile comments in Dockerfile file.
