@@ -4,6 +4,7 @@ M=$(sudo docker run -v "$PWD":/app --rm phpunit/phpunit --configuration="phpunit
 if [ $M -eq "0" ] ; then
 	exit $M
 else
+	R=$(git reset .)
 	sudo docker run -v "$PWD":/app --rm phpunit/phpunit --configuration="phpunit.xml" 
 	echo ''
 	echo ''
